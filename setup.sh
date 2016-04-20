@@ -11,6 +11,9 @@ should not be any further manual work unless noted.
 sudo apt-get -y install vim python python-pip python-dev i3 chromium-browser
 # Node.js
 sudo apt-get -y install nodejs npm
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+# PhantomJS
+npm install phantomjs
 # OpenCV
 sudo apt-get -y install libopencv-dev python-opencv
 pip install matplotlib pyscreenshot
@@ -66,6 +69,3 @@ mkdir ~/projects/resources
 
 # Create symlinks for custom programs in /usr/local/bin/
 sudo cp -rs $(pwd)/bin/* /usr/local/bin/
-
-# Reload bashrc
-source ~/.bashrc
