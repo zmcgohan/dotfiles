@@ -8,9 +8,9 @@ should not be any further manual work unless noted.
 '
 
 # UBUNTU
-# sudo apt-get install vim python i3 chromium-browser
-# sudo apt-get install nodejs npm
-# sudo apt-get install libopencv-dev python-opencv
+sudo apt-get -y install vim python i3 chromium-browser
+sudo apt-get -y install nodejs npm
+sudo apt-get -y install libopencv-dev python-opencv
 
 # Bashrc setup
 # make sure bashrc exists
@@ -26,10 +26,10 @@ git config --global core.editor vim
 # i3 setup
 # Install
 echo 'deb http://dl.bintray.com/i3/i3-autobuild-ubuntu wily main' > /etc/apt/sources.list.d/i3-autobuild.list
-apt-get update
-apt-get --allow-unauthenticated install i3-autobuild-keyring
-apt-get update
-apt-get install i3
+sudo apt-get update
+sudo apt-get -y --allow-unauthenticated install i3-autobuild-keyring
+sudo apt-get update
+sudo apt-get -y install i3
 # Create symbolic link to config file
 ln -s $(pwd)/i3wm/config ~/.i3/config
 # create symlink for info bar wrapper (allows full customization of text)
