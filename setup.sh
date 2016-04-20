@@ -62,5 +62,5 @@ mkdir -p ~/projects/testing
 mkdir ~/projects/resources
 
 # create symlinks for custom programs in /usr/local/bin/
-cp -rs $(pwd)/bin/* /usr/local/bin/
+sudo cp -rs $(pwd)/bin/* /usr/local/bin/
 
