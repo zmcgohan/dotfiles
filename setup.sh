@@ -31,9 +31,9 @@ apt-get --allow-unauthenticated install i3-autobuild-keyring
 apt-get update
 apt-get install i3
 # Create symbolic link to config file
-ln -s ~/system-configs/i3-config ~/.i3/config
+ln -s $(pwd)/i3wm/config ~/.i3/config
 # create symlink for info bar wrapper (allows full customization of text)
-ln -s ~/system-config/i3status_wrapper.py ~/.i3/i3status_wrapper.py
+ln -s $(pwd)/i3wm/i3status_wrapper.py ~/.i3/i3status_wrapper.py
 
 # Vim setup
 # Clone Vundle
@@ -41,10 +41,16 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Install plugins
 vim +PluginInstall +qall
 # Create symbolic link to config file
-ln -s ~/system-configs/.vimrc ~/.vimrc
+ln -s $(pwd)/.vimrc ~/.vimrc
+
+# Create SSH folder if it doesn't exist
+mkdir -p ~/.ssh
+# Create symlinks for SSH keys
+ln -s ~/.ssh/* ssh/id_rsa*
 
 # Create projects folder
 mkdir ~/projects
 
 # create symlinks for custom programs in /usr/local/bin/
 ln -s /usr/local/bin/* bin/
+
