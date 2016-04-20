@@ -12,8 +12,6 @@ sudo apt-get -y install vim python python-pip python-dev i3 chromium-browser
 # Node.js
 sudo apt-get -y install nodejs npm
 sudo ln -s /usr/bin/nodejs /usr/bin/node
-# PhantomJS
-npm install phantomjs
 # OpenCV
 sudo apt-get -y install libopencv-dev python-opencv
 pip install matplotlib pyscreenshot

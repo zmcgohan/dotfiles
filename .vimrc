@@ -44,7 +44,6 @@ let maplocalleader="\\"
 " PERSONAL COMMANDS
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>c :! clear && python %:p<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>rv :source $MYVIMRC<CR>
@@ -61,5 +60,5 @@ nnoremap <C-L> <C-W>l
 inoremap jk <Esc>
 inoremap <Esc> <Nop>
 
-" Operator mappings
-onoremap p i(
+autocmd FileType python nnoremap <Leader>c :! clear && python %:p<CR>
+autocmd FileType javascript nnoremap <Leader>c :! clear && node %:p<CR>
