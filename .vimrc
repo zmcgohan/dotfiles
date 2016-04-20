@@ -17,6 +17,11 @@ Plugin 'scrooloose/nerdtree'
 nnoremap <C-n> :NERDTreeToggle<CR>
 Plugin 'ctrlpvim/ctrlp.vim'
 
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " " " VUNDLE STUFF END " " "
@@ -29,6 +34,7 @@ set wildignore=*.swp,*.pyc,*.class
 set nobackup
 set noswapfile
 set noerrorbells visualbell t_vb=
+set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 
 let mapleader=","
 nnoremap - ,
@@ -37,6 +43,7 @@ let maplocalleader="\\"
 " PERSONAL COMMANDS
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>c :! clear && python %:p<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>rv :source $MYVIMRC<CR>
