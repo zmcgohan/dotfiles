@@ -32,6 +32,7 @@ cat .bashrc_custom >> ~/.bashrc
 git config --global user.name "Zach McGohan"
 git config --global user.email "zmcgohan@gmail.com"
 git config --global core.editor vim
+git config --global push.default simple
 
 # i3 setup
 # Create i3 folder in home directory
