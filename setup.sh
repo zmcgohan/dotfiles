@@ -30,6 +30,8 @@ sudo apt-get update
 sudo apt-get -y --allow-unauthenticated install i3-autobuild-keyring
 sudo apt-get update
 sudo apt-get -y install i3
+# Create i3 folder in home directory
+mkdir -p ~/.i3
 # Create symbolic link to config file
 ln -s $(pwd)/i3wm/config ~/.i3/config
 # create symlink for info bar wrapper (allows full customization of text)
@@ -45,13 +47,20 @@ ln -s $(pwd)/.vimrc ~/.vimrc
 
 # Create SSH folder if it doesn't exist
 mkdir -p ~/.ssh
+# Set permissions
+chmod 700 ~/.ssh
+chmod 644 ssh/id_rsa.pub
+chmod 600 ssh/id_rsa
 # Create symlinks for SSH keys
-ln -s ~/.ssh/* $(pwd)/ssh/
+cp -rs $(pwd)/ssh/* ~/.ssh/
+# Pass new SSH identity to ssh-agent
+# TODO this probably won't work on leaner OSes
+ssh-add
 
 # Create projects, projects/testing and projects/resources folder
 mkdir -p ~/projects/testing
 mkdir ~/projects/resources
 
 # create symlinks for custom programs in /usr/local/bin/
-ln -s /usr/local/bin/* $(pwd)/bin/
+cp -rs $(pwd)/bin/* /usr/local/bin/
 
