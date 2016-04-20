@@ -46,11 +46,12 @@ ln -s $(pwd)/.vimrc ~/.vimrc
 # Create SSH folder if it doesn't exist
 mkdir -p ~/.ssh
 # Create symlinks for SSH keys
-ln -s ~/.ssh/* ssh/id_rsa*
+ln -s ~/.ssh/* $(pwd)/ssh/
 
-# Create projects folder
-mkdir ~/projects
+# Create projects, projects/testing and projects/resources folder
+mkdir -p ~/projects/testing
+mkdir ~/projects/resources
 
 # create symlinks for custom programs in /usr/local/bin/
-ln -s /usr/local/bin/* bin/
+ln -s /usr/local/bin/* $(pwd)/bin/
 
