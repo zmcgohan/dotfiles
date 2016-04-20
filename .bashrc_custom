@@ -1,0 +1,7 @@
+
+# mkcd command (makes directory and navigates to it)
+mkcd ()
+{
+	mkdir -p -- "$1" &&
+	cd -P -- "$1"
+}

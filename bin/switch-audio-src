@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+import subprocess
+
+if __name__ == '__main__':
+	# change current audio source
+	output = subprocess.check_output([ "pacmd", "list-sinks" ])
+	old_index = None
+	new_index = None
+	for line in output.splitlines():
+		line = line.strip()
+		if line.startswith("* index: "):
+			old_index = int(line[len("* index: "):])
+	if old_index == 1: new_index = 2
+	else: new_index = 1
+	subprocess.call(["pacmd", "set-default-sink", str(new_index)])
+	print "Audio source changed to sink #{}\n".format(new_index)
+	
+	# move streams over to the new source
+	output = subprocess.check_output([ "pacmd", "list-sink-inputs" ])
+	cur_index = None
+	for line in [x.strip().lower() for x in output.splitlines()]:
+		if line.startswith("index: "):
+			cur_index = int(line[len("index: "):])
+		elif line.startswith("sink: "):
+			cur_sink = int([token for token in line[len("sink: "):].split()][0])
+			if cur_sink == old_index:
+				subprocess.call([ "pacmd", "move-sink-input", str(cur_index), str(new_index) ])
