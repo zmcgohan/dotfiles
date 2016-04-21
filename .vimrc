@@ -36,6 +36,10 @@ set nobackup
 set noswapfile
 set noerrorbells visualbell t_vb=
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+" Set coloring of tabs
+hi TabLineFill ctermbg=Grey ctermfg=Grey
+hi TabLineSel ctermfg=White ctermbg=Black
+hi TabLine ctermbg=Grey ctermfg=Black cterm=NONE
 
 let mapleader=","
 nnoremap - ,
