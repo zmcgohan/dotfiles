@@ -22,6 +22,8 @@ sudo apt-get update
 sudo apt-get -y --allow-unauthenticated install i3-autobuild-keyring
 sudo apt-get update
 sudo apt-get -y install i3
+# Irrlicht
+sudo apt-get -y install libirrlicht1.8 libirrlicht-dev libirrlicht-doc
 
 # Bashrc setup
 # make sure bashrc exists
