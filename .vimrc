@@ -38,8 +38,13 @@ set noerrorbells visualbell t_vb=
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
 " Set coloring of tabs
 hi TabLineFill ctermbg=Grey ctermfg=Grey
-hi TabLineSel ctermfg=White ctermbg=Black
+hi TabLineSel ctermbg=Black ctermfg=White 
 hi TabLine ctermbg=Grey ctermfg=Black cterm=NONE
+" Set coloring of status line
+hi StatusLine ctermbg=Black ctermfg=188
+hi StatusLineNC ctermbg=Black ctermfg=Grey
+" Set coloring of window border
+hi VertSplit ctermbg=Black ctermfg=188
 
 let mapleader=","
 nnoremap - ,
