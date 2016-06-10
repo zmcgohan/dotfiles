@@ -8,22 +8,22 @@ should not be any further manual work unless noted.
 '
 
 ### UBUNTU SPECIFIC ###
-sudo apt-get -y install vim python python-pip python-dev i3 chromium-browser
+# sudo apt-get -y install vim python python-pip python-dev i3 chromium-browser
 # Node.js
-sudo apt-get -y install nodejs npm
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-npm install -g nodemon forever
+# sudo apt-get -y install nodejs npm
+# sudo ln -s /usr/bin/nodejs /usr/bin/node
+# npm install -g nodemon forever
 # OpenCV
-sudo apt-get -y install libopencv-dev python-opencv
-pip install matplotlib pyscreenshot
+# sudo apt-get -y install libopencv-dev python-opencv
+# pip install matplotlib pyscreenshot
 # i3
-echo 'deb http://dl.bintray.com/i3/i3-autobuild-ubuntu wily main' > /etc/apt/sources.list.d/i3-autobuild.list
-sudo apt-get update
-sudo apt-get -y --allow-unauthenticated install i3-autobuild-keyring
-sudo apt-get update
-sudo apt-get -y install i3
+# echo 'deb http://dl.bintray.com/i3/i3-autobuild-ubuntu wily main' > /etc/apt/sources.list.d/i3-autobuild.list
+# sudo apt-get update
+# sudo apt-get -y --allow-unauthenticated install i3-autobuild-keyring
+# sudo apt-get update
+# sudo apt-get -y install i3
 # Irrlicht
-sudo apt-get -y install libirrlicht1.8 libirrlicht-dev libirrlicht-doc
+# sudo apt-get -y install libirrlicht1.8 libirrlicht-dev libirrlicht-doc
 
 # Bashrc setup
 # make sure bashrc exists
@@ -39,11 +39,11 @@ git config --global push.default simple
 
 # i3 setup
 # Create i3 folder in home directory
-mkdir -p ~/.i3
+# mkdir -p ~/.i3
 # Create symbolic link to config file
-ln -s $(pwd)/i3wm/config ~/.i3/config
+# ln -s $(pwd)/i3wm/config ~/.i3/config
 # create symlink for info bar wrapper (allows full customization of text)
-ln -s $(pwd)/i3wm/i3status_wrapper.py ~/.i3/i3status_wrapper.py
+# ln -s $(pwd)/i3wm/i3status_wrapper.py ~/.i3/i3status_wrapper.py
 
 # Vim setup
 # Clone Vundle
@@ -70,4 +70,4 @@ mkdir -p ~/projects/testing
 mkdir ~/projects/resources
 
 # Create symlinks for custom programs in /usr/local/bin/
-sudo cp -rs $(pwd)/bin/* /usr/local/bin/
+# sudo cp -rs $(pwd)/bin/* /usr/local/bin/

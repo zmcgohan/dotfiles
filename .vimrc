@@ -22,6 +22,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mkitt/tabline.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'keith/swift.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,7 +37,7 @@ set wildignore=*.swp,*.pyc,*.class
 set nobackup
 set noswapfile
 set noerrorbells visualbell t_vb=
-set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " Set coloring of tabs
 hi TabLineFill ctermbg=Grey ctermfg=Grey
 hi TabLineSel ctermbg=Black ctermfg=White 
@@ -69,5 +71,7 @@ nnoremap <C-L> <C-W>l
 inoremap jk <Esc>
 inoremap <Esc> <Nop>
 
-autocmd FileType python nnoremap <Leader>c :! clear && python %:p<CR>
-autocmd FileType javascript nnoremap <Leader>c :! clear && node %:p<CR>
+autocmd FileType python map <Leader>c :w<CR>:! clear && python %:p<CR>
+autocmd FileType javascript map <Leader>c :! clear && phantomjs %:p<CR>
+autocmd FileType c map <Leader>c :! clear && gcc %:p -lcurses && ./a.out<CR>
+autocmd FileType swift map <Leader>c :w<CR>:! clear && swift %:p<CR>
