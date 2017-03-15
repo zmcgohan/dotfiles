@@ -1,0 +1,21 @@
+#!/usr/local/bin/python
+
+import subprocess
+import os, sys
+import time
+
+if len(sys.argv) < 2:
+	print "Please provide a filename to run and watch."
+	sys.exit(1)
+
+filename = sys.argv[1]
+
+while True:
+	statbuf = os.stat(filename)
+	last_change = statbuf.st_mtime
+	proc = subprocess.Popen([ "python", filename ])
+	while statbuf.st_mtime == last_change:
+		time.sleep(0.25)
+		statbuf = os.stat(filename)
+	print "Change detected. Reloading {}".format(filename)
+	proc.kill()
