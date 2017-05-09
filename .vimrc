@@ -92,30 +92,30 @@ inoremap <Esc> <Nop>
 " }}}
 
 " python commands {{{
-autocmd filetype python map <leader>c :w<cr>:! clear && python %:p<cr>
+autocmd FileType python map <leader>c :w<cr>:! clear && python %:p<cr>
 " }}}
 " javascript settings {{{
-autocmd filetype javascript map <leader>c :! clear && node %:p<cr>
+autocmd FileType javascript map <leader>c :! clear && node %:p<cr>
 " }}}
 " c settings {{{
-autocmd filetype c map <leader>c :! clear && gcc %:p -Wall -lcurses -pthread && ./a.out<cr>
+autocmd FileType c map <leader>c :! clear && gcc %:p -Wall -lcurses -pthread && ./a.out<cr>
 " }}}
 " swift settings {{{
-autocmd filetype swift map <leader>c :w<cr>:! clear && swift %:p<cr>
+autocmd FileType swift map <leader>c :w<cr>:! clear && swift %:p<cr>
 " }}}
 " cpp settings {{{
-autocmd filetype cpp map <leader>c :! clear && g++ %:p && ./a.out<cr>
+autocmd FileType cpp map <leader>c :! clear && g++ %:p && ./a.out<cr>
 " }}}
 " shell settings {{{
-autocmd filetype sh map <leader>c :! clear && sh %:p<cr>
+autocmd FileType sh map <leader>c :! clear && sh %:p<cr>
 " }}}
 " r settings {{{
-autocmd filetype r map <leader>c :! clear && rscript %:p<cr>
+autocmd FileType r map <leader>c :! clear && rscript %:p<cr>
 " }}}
 
 " vimscript file settings {{{
 augroup filetype_vim
 	autocmd!
-	autocmd filetype vim setlocal foldmethod=marker
+	autocmd FileType vim setlocal foldmethod=marker
 augroup end
 " }}}
