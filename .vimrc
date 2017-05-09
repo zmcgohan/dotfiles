@@ -18,6 +18,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeIgnore = ['\.pyc$']
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -104,6 +105,9 @@ autocmd filetype swift map <leader>c :w<cr>:! clear && swift %:p<cr>
 " }}}
 " cpp settings {{{
 autocmd filetype cpp map <leader>c :! clear && g++ %:p && ./a.out<cr>
+" }}}
+" shell settings {{{
+autocmd filetype sh map <leader>c :! clear && sh %:p<cr>
 " }}}
 " r settings {{{
 autocmd filetype r map <leader>c :! clear && rscript %:p<cr>
