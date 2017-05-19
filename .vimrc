@@ -51,6 +51,7 @@ set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " }}}
 
 " Visual settings {{{
+set nohlsearch
 set background=dark
 colorscheme solarized
 " Set coloring of tabs
@@ -79,7 +80,7 @@ nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>h :cd %:p:h<CR>
 " }}}
 
-" Window movements {{{
+" Window commands {{{
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
@@ -87,12 +88,14 @@ nnoremap <C-L> <C-W>l
 " }}}
 
 " Remap escape {{{
-inoremap jk <Esc>
+inoremap jk <Esc>:w<CR>
 inoremap <Esc> <Nop>
+"nnoremap <Esc> :NERDTreeToggle<CR>
 " }}}
 
 " python commands {{{
-autocmd FileType python map <leader>c :w<cr>:! clear && python %:p<cr>
+autocmd FileType python map <leader>c :make<cr>
+"autocmd FileType python map <leader>c :w<cr>:! clear && python %:p<cr>
 " }}}
 " javascript settings {{{
 autocmd FileType javascript map <leader>c :! clear && node %:p<cr>
