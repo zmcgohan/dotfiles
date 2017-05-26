@@ -31,6 +31,13 @@ Plugin 'keith/swift.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'Solarized'
 Plugin 'mattn/emmet-vim'
+" Session management (saves vim state)
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+let g:session_autosave_periodic = 1
+let g:session_autosave_silent = 1
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -71,6 +78,7 @@ nnoremap - ,
 let maplocalleader="\\"
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :qa<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
 nnoremap <Leader>rv :source $MYVIMRC<CR>
