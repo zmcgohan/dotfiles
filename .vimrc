@@ -57,9 +57,15 @@ set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " }}}
 
 " Visual settings {{{
+"if !has('gui_running')
+"  let g:solarized_termtrans=1
+"endif
 syntax on
 set nohlsearch
 set background=dark
+let g:solarized_termcolors = 16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
 "" Set coloring of tabs
 "hi TabLineFill ctermbg=Grey ctermfg=Grey
