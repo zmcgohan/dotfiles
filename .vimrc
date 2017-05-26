@@ -37,7 +37,6 @@ filetype plugin indent on    " required
 " }}}
 
 " Editor settings {{{
-syntax enable
 set cmdheight=2
 set foldlevelstart=0
 set incsearch
@@ -51,18 +50,19 @@ set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " }}}
 
 " Visual settings {{{
+syntax on
 set nohlsearch
 set background=dark
 colorscheme solarized
-" Set coloring of tabs
-hi TabLineFill ctermbg=Grey ctermfg=Grey
-hi TabLineSel ctermbg=Black ctermfg=White 
-hi TabLine ctermbg=Grey ctermfg=Black cterm=NONE
-" Set coloring of status line
-hi StatusLine ctermbg=Black ctermfg=188
-hi StatusLineNC ctermbg=Black ctermfg=Grey
-" Set coloring of window border
-hi VertSplit ctermbg=Black ctermfg=188
+"" Set coloring of tabs
+"hi TabLineFill ctermbg=Grey ctermfg=Grey
+"hi TabLineSel ctermbg=Black ctermfg=White 
+"hi TabLine ctermbg=Grey ctermfg=Black cterm=NONE
+"" Set coloring of status line
+"hi StatusLine ctermbg=Black ctermfg=188
+"hi StatusLineNC ctermbg=Black ctermfg=Grey
+"" Set coloring of window border
+""hi VertSplit ctermbg=Black ctermfg=188
 " }}}
 
 " Leader settings & commands {{{
@@ -78,6 +78,7 @@ nnoremap <Leader>ev :tabnew $MYVIMRC<CR>
 nnoremap <Leader>vs :vsplit<CR>
 nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>h :cd %:p:h<CR>
+nnoremap <Leader>p :set paste!<CR>:set paste?<CR>
 " }}}
 
 " Window commands {{{
