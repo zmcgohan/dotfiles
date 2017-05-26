@@ -18,6 +18,8 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+" Allow single clicks to open files
+let g:NERDTreeMouseMode = 3
 let NERDTreeIgnore = ['\.pyc$']
 Plugin 'ctrlpvim/ctrlp.vim'
 
