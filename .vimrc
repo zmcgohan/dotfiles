@@ -60,6 +60,11 @@ set noerrorbells visualbell t_vb=
 set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " }}}
 
+" Autosaving {{{
+	set updatetime=200
+	autocmd CursorHold,CursorHoldI * silent! update
+" }}}
+
 " Visual settings {{{
 "if !has('gui_running')
 "  let g:solarized_termtrans=1
@@ -91,7 +96,7 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :qa<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
-nnoremap <Leader>rv :source $MYVIMRC<CR>
+nnoremap <Leader>rv :so $MYVIMRC<CR>
 nnoremap <Leader>ev :tabnew $MYVIMRC<CR>
 nnoremap <Leader>vs :vsplit<CR>
 nnoremap <Leader>hs :split<CR>
@@ -104,10 +109,12 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+nnoremap ) <C-W>+
+nnoremap ( <C-W>-
 " }}}
 
 " Remap escape {{{
-inoremap jk <Esc>:w<CR>
+inoremap jk <Esc>
 inoremap <Esc> <Nop>
 "nnoremap <Esc> :NERDTreeToggle<CR>
 " }}}
