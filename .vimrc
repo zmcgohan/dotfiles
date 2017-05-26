@@ -44,6 +44,8 @@ filetype plugin indent on    " required
 " }}}
 
 " Editor settings {{{
+" Allow mouse clicks and highlighting (even works over SSH!)
+set mouse=a
 set cmdheight=2
 set foldlevelstart=0
 set incsearch
