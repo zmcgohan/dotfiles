@@ -28,7 +28,16 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mkitt/tabline.vim'
-" Plugin 'scrooloose/syntastic'
+" Syntastic
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { 'regex': 'fatal error: mpi.h' }
 Plugin 'keith/swift.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'Solarized'
@@ -61,8 +70,13 @@ set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2
 " }}}
 
 " Autosaving {{{
+	" Used if Syntastic is not used
 	set updatetime=200
 	autocmd CursorHold,CursorHoldI * silent! update
+	"augroup syntastic
+	"		autocmd CursorHold * nested update
+	"augroup END
+	"set updatetime=200
 " }}}
 
 " Visual settings {{{
