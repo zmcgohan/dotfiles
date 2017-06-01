@@ -2,9 +2,11 @@ set editing-mode vi
 set show-mode-in-prompt on
 set vi-cmd-mode-string \1\e[32m\2(c) \1\e[0m\2
 set vi-ins-mode-string \1\e[34m\2(i) \1\e[0m\2
-"\C-x\C-r": 'echo testing'
 
 set keymap vi-command
+"\C-x": re-read-init-file
 
 set keymap vi-insert
+"\C-x": re-read-init-file
 "jk": vi-movement-mode
+"\C-l": clear-screen

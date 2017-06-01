@@ -29,21 +29,21 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mkitt/tabline.vim'
 " Syntastic
-Plugin 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { 
-	\ 'regex': [
-		\ 'fatal error: mpi.h',
-		\ '\[invalid-name\]', '\[global-statement\]', '\[missing-docstring\]',
-		\ '\[redefined-outer-name\]', '\[multiple-statements\]', '\[fixme\] TODO', 
-	\ ]
-	\}
+"Plugin 'scrooloose/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_quiet_messages = { 
+"	\ 'regex': [
+"		\ 'fatal error: mpi.h',
+"		\ '\[invalid-name\]', '\[global-statement\]', '\[missing-docstring\]',
+"		\ '\[redefined-outer-name\]', '\[multiple-statements\]', '\[fixme\] TODO', 
+"	\ ]
+"	\}
 Plugin 'keith/swift.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'Solarized'
@@ -140,7 +140,7 @@ inoremap <Esc> <Nop>
 " }}}
 
 " python commands {{{
-autocmd FileType python map <leader>c :make<cr>
+autocmd FileType python map <leader>c :!clear && python %:p<cr>
 "autocmd FileType python map <leader>c :w<cr>:! clear && python %:p<cr>
 " }}}
 " javascript settings {{{
